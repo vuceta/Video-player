@@ -1,5 +1,3 @@
-//Proceduralni
-
 // let playBtn = document.querySelector("#play");
 // let reloadBtn = document.querySelector("#reload");
 // let video = document.querySelector("video");
