@@ -1,3 +1,5 @@
+//Proceduralni
+
 // let playBtn = document.querySelector("#play");
 // let reloadBtn = document.querySelector("#reload");
 // let video = document.querySelector("video");
@@ -19,6 +21,10 @@
 //   video.load();
 //   playBtn.setAttribute("src", "play-button.png");
 // }
+
+
+
+//Object
 
 (function () {
   let videoPlayer = {
