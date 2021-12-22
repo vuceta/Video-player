@@ -30,10 +30,10 @@ video {
   top: 45%;
   display: none;
 }
-#play {
+.play {
   left: 35%;
 }
-#reload {
+.reload {
   left: 55%;
 }
 .btnHolder:hover img {

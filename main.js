@@ -54,28 +54,32 @@
 //Constuctor
 
 (function () {
-  function VideoPlayer() {
-    this.playBtn = document.querySelector("#play");
-    this.reloadBtn = document.querySelector("#reload");
-    this.video = document.querySelector("video");
-    this.init = function () {
-      this.playBtn.addEventListener("click", this.playVideo.bind(this));
-      this.reloadBtn.addEventListener("click", this.realoadVideo.bind(this));
-    };
-    this.playVideo = function () {
-      if (this.playBtn.getAttribute("src") === "play-button.png") {
-        this.video.play();
-        this.playBtn.setAttribute("src", "video-pause-button.png");
-      } else {
-        this.video.pause();
+  class VideoPlayer {
+    constructor(id) {
+      this.container = document.querySelector("#" + id);
+      this.playBtn = this.container.querySelector(".play");
+      this.reloadBtn = this.container.querySelector(".reload");
+      this.video = this.container.querySelector("video");
+      this.init = function () {
+        this.playBtn.addEventListener("click", this.playVideo.bind(this));
+        this.reloadBtn.addEventListener("click", this.realoadVideo.bind(this));
+      };
+      this.playVideo = function () {
+        if (this.playBtn.getAttribute("src") === "play-button.png") {
+          this.video.play();
+          this.playBtn.setAttribute("src", "video-pause-button.png");
+        } else {
+          this.video.pause();
+          this.playBtn.setAttribute("src", "play-button.png");
+        }
+      };
+      this.realoadVideo = function () {
+        this.video.load();
         this.playBtn.setAttribute("src", "play-button.png");
-      }
-    };
-    this.realoadVideo = function () {
-      this.video.load();
-      this.playBtn.setAttribute("src", "play-button.png");
-    };
+      };
+    }
   }
-  let vp = new VideoPlayer();
+  let vp = new VideoPlayer("one");
   vp.init();
+  let vp2 = new VideoPlayer("two").init();
 })();
